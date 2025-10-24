@@ -1,0 +1,199 @@
+*{
+margin: 0;
+padding: 0;
+border: 0;
+box-sizing: border-box;
+}
+
+li {
+list-style: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+font-size: inherit;
+font-weight: inherit;
+}
+
+a {
+color: inherit;
+text-decoration: none;
+display: block;
+}
+
+p a {
+display: inline;
+}
+img, picture, video, iframe, svg {
+display: block;
+width: 100%;
+height: 100%;
+object-fit: cover;
+}
+svg {
+fill: currentColor;
+}
+
+:root {
+font-size: 100%;
+font-family: Arial, Helvetica, sans-serif;
+}
+html {
+scroll-behavior: smooth;
+}
+
+/*Fin del reset*/
+
+
+/* HEADER */
+
+.Header {
+    width: 100%;
+    /* background-color: lightgray; */
+    padding: 2rem;
+
+}
+.Header-wrapper {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+.Header-logo {}
+.Header-h1 {}
+.Header-stockholm {width: 150px;}
+.Header-nav {}
+
+.Header-ul {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+
+    gap: 2rem;
+}
+.Header-li {}
+.Header-a {}
+.Header-burger {}
+
+.Main {
+    margin: 4px;
+    margin: auto;
+    padding: .25rem;
+}
+.Main-wrapper {
+    /* width: 100%; */
+    /* min-height: 200vh; */
+    /* background-color: beige; */
+
+    display: grid;
+    /* grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); */
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-auto-flow: dense;
+    grid-auto-rows: 1fr; 
+
+    gap: 4px;
+}
+
+.Main-item {
+    /* background-color: rgb(225, 209, 195); */
+    grid-column: span 1;
+}
+.Main-double {
+    /* background-color: rgb(144, 144, 101); */
+    grid-row: span 2;
+
+    /* display: flex;  con esto la imagen se acoplara al espacio*/ 
+}
+.Main-double--rest {
+    grid-column: span 2;
+    grid-row: span 1;
+}
+.Main-square {
+    /* background-color: rgb(217, 179, 164); */
+    grid-row: span 2;
+    grid-column: span 2;
+}
+
+
+
+
+
+/* FOOTER */
+
+.Footer {
+    min-height: 50vh;
+    /* background-color: aqua; */
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 3rem;
+}
+.Footer-wrapper {
+    width: 40vw;
+    /* background-color: red; */
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+    gap: 2rem;
+}
+.Footer-h2 {}
+.Footer-p {opacity: 50%;}
+.Footer-copy {
+    /* background-color: lightblue; */
+    opacity: 50%;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* RESPONSIVE */
+
+@media (max-width: 1360px) {
+    .Main-wrapper {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (max-width: 1024px) {
+    .Main-wrapper {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .Header-ul {
+        display: none;
+    }
+
+    .Main-wrapper {
+        grid-template-columns: repeat(2, 1fr);
+    }
+   
+}
+
+@media (max-width: 435px) {
+    .Main-wrapper {
+        grid-template-columns: 1fr;
+        column-gap: 0;
+    }
+
+    /* .Main-square {
+        grid-row: span 1;
+        grid-column: span 1;
+    }  No se exactamente qué hace esto!! creo que no es necesario*/
+}
